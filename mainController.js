@@ -6,8 +6,8 @@
       $scope.showresult = false;
       $scope.isBusy = false;
       let postOcrUrl = "https://api.ocr.space/parse/image";
-      let api_key_ocr = "1a65cf26a588957";
-      let api_key_google_vision = "AIzaSyArnrcrPntzeOcnzZyPbyPhIPBuDByejFA";
+      let api_key_ocr = "";
+      let api_key_google_vision = "";
       let fi = $scope.jpegFile;
       $scope.isFile = false;
       $scope.files = [];
