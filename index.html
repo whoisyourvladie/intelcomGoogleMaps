@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="app">
+
+<head>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZ73swsdvxLEWKVT33CBJSzsIpQrkTSg"></script> -->
+  <script type="text/javascript" src="https://cdn.rawgit.com/adonespitogo/angular-base64-upload/master/src/angular-base64-upload.js"></script>
+  <!-- <script src="app.js"></script> -->
+  <script src="appConfig.js"></script>
+  <script src="uploadService.js"></script>
+  <script src="models.js"></script>
+  <script src="mainController.js"></script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Route Visualizer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container main" ng-controller="mainController">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group" ng-show="!isBusy">
+          <form name="myForm">
+            <!-- <input type="file" name="fileInp" upload-file-model="jpegFile" multiple />
+            <button ng-click="getOcrResult()" class="btn-success">upload me</button> -->
+
+             <input type="file" ng-model="files" name="files" base-sixty-four-input multiple accept="image/*, .zip" minsize="500" required minnum="2" on-after-validate="onChange">
+             <p ng-repeat="file in files">{{file.filename}}</p>
+            <!-- ng-show="isFile" -->
+          </form>
+        </div>
+        <div class="form-group" class="img-fluid" ng-show="isBusy">
+          <img src="loader.gif" alt="loader">
+        </div>
+      </div>
+    </div>
+    <div class="row" ng-init="loadScript()">
+      <div class="col-sm-12">
+        <div id="googleMap"></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

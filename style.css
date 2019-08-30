@@ -1,0 +1,10 @@
+.container.main{
+  margin: 20px;
+}
+.container.main img{
+  width:100px;
+}
+#googleMap{
+  height:750px;
+
+}
