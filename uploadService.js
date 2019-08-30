@@ -2,7 +2,7 @@
   'use strict';
   angular.module('app').service('uploadService', function($http, $q,$timeout) {
     var googleOcrApi = "https://vision.googleapis.com/v1/images:annotate?key=";
-    var api_key_google_vision = "AIzaSyArnrcrPntzeOcnzZyPbyPhIPBuDByejFA";
+    var api_key_google_vision = "";
 
     this.uploadeImagestoGoogle = function(base64array) {
       var deferred = $q.defer();
@@ -67,7 +67,7 @@
         var config = {
           params: {
             address: address,
-            key: 'AIzaSyArnrcrPntzeOcnzZyPbyPhIPBuDByejFA'
+            key: ''
           }
         };
 
